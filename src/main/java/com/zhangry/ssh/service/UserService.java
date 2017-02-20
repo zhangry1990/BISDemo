@@ -12,6 +12,7 @@ package com.zhangry.ssh.service;
 
 
 import com.zhangry.common.page.QueryParameter;
+import com.zhangry.service.BaseService;
 import com.zhangry.ssh.entity.User;
 import org.springframework.security.core.userdetails.UserDetails;
 

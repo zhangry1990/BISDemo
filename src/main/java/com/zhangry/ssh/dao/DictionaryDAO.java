@@ -1,5 +1,6 @@
 package com.zhangry.ssh.dao;
 
+import com.zhangry.data.hibernate.BaseDAO;
 import com.zhangry.ssh.entity.Dictionary;
 
 import java.util.List;

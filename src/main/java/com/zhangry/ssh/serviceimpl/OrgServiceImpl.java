@@ -8,15 +8,15 @@
  */
 package com.zhangry.ssh.serviceimpl;
 
-import com.thinvent.common.constant.Constant;
-import com.thinvent.common.util.AssertUtil;
-import com.thinvent.common.util.MapperUtil;
-import com.thinvent.service.impl.BaseServiceImpl;
-import com.thinvent.wxgl.uc.dao.OrgDAO;
-import com.thinvent.wxgl.uc.entity.Org;
-import com.thinvent.wxgl.uc.entity.OrgUser;
-import com.thinvent.wxgl.uc.entity.User;
-import com.thinvent.wxgl.uc.service.OrgService;
+import com.zhangry.common.constant.Constant;
+import com.zhangry.common.util.AssertUtil;
+import com.zhangry.common.util.MapperUtil;
+import com.zhangry.service.impl.BaseServiceImpl;
+import com.zhangry.ssh.dao.OrgDAO;
+import com.zhangry.ssh.entity.Org;
+import com.zhangry.ssh.entity.OrgUser;
+import com.zhangry.ssh.entity.User;
+import com.zhangry.ssh.service.OrgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Date;

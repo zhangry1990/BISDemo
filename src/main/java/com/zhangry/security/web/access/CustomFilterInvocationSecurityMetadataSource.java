@@ -1,14 +1,19 @@
 package com.zhangry.security.web.access;
 
 import com.zhangry.security.core.ISecureObjectManager;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.*;
 
 /**
  * Created by zhangry on 2017/2/20.
@@ -34,9 +39,10 @@ public class CustomFilterInvocationSecurityMetadataSource implements FilterInvoc
             Iterator var2 = attributes.entrySet().iterator();
 
             while(var2.hasNext()) {
-                Map.Entry entry = (Map.Entry)var2.next();
+                Entry entry = (Entry)var2.next();
                 if(!this.requestMap.containsKey(entry.getKey())) {
-                    this.requestMap.put(new AntPathRequestMatcher((String)entry.getKey()), entry.getValue());
+                    // this.requestMap.put(new AntPathRequestMatcher((String)entry.getKey()), entry.getValue());
+                    this.requestMap.put(new AntPathRequestMatcher((String)entry.getKey()), (Collection<ConfigAttribute>)entry.getValue());
                 }
             }
 
@@ -47,13 +53,13 @@ public class CustomFilterInvocationSecurityMetadataSource implements FilterInvoc
         HttpServletRequest request = ((FilterInvocation)object).getRequest();
         Iterator var3 = this.requestMap.entrySet().iterator();
 
-        Map.Entry entry;
+        Entry entry;
         do {
             if(!var3.hasNext()) {
                 return null;
             }
 
-            entry = (Map.Entry)var3.next();
+            entry = (Entry)var3.next();
         } while(!((RequestMatcher)entry.getKey()).matches(request));
 
         return (Collection)entry.getValue();
@@ -64,7 +70,7 @@ public class CustomFilterInvocationSecurityMetadataSource implements FilterInvoc
         Iterator var2 = this.requestMap.entrySet().iterator();
 
         while(var2.hasNext()) {
-            Map.Entry entry = (Map.Entry)var2.next();
+            Entry entry = (Entry)var2.next();
             allAttributes.addAll((Collection)entry.getValue());
         }
 

@@ -1,15 +1,29 @@
 package com.zhangry.common.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.google.common.collect.Lists;
+import com.zhangry.common.page.Page;
+import com.zhangry.common.page.QueryParameter;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
-
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.*;
 
 /**
  * Created by zhangry on 2017/2/20.
@@ -363,7 +377,7 @@ class JsonMapper {
         return (List)this.convertToObject(jsonData, (JavaType)this.createCollectionType(List.class, new Class[]{Map.class}));
     }
 
-    public <T> T convertToMap(String jsonData, String[] parameters, boolean isReserved) {
+    public <T extends Map> Map convertToMap(String jsonData, String[] parameters, boolean isReserved) {
         Map result = this.convertToMap(jsonData);
         if(result == null) {
             return null;

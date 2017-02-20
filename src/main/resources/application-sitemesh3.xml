@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+    <!-- 定义装饰器规则 -->
+    <content-processor>
+        <tag-rule-bundle class="com.thinvent.web.sitemesh.ExSectionTagRuleBundle" />
+        <tag-rule-bundle class="org.sitemesh.content.tagrules.html.DivExtractingTagRuleBundle" />
+    </content-processor>
+
+    <!-- 配置模板页 -->
+    <mapping path="/*" decorator="/WEB-INF/views/layout.jsp"/>
+
+    <!-- 排除以下路径中的资源，不进行装饰（不加入到布局中） -->
+    <mapping path="/signin" exclude="true"/>
+    <mapping path="/error" exclude="true"/>
+    <mapping path="/ajaxerror" exclude="true"/>
+    <mapping path="/css/*" exclude="true"/>
+    <mapping path="/js/*" exclude="true"/>
+</sitemesh>

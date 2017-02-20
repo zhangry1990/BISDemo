@@ -9,6 +9,7 @@
 package com.zhangry.ssh.daoimpl;
 
 
+import com.zhangry.common.constant.Constant;
 import com.zhangry.common.page.Page;
 import com.zhangry.common.page.QueryParameter;
 import com.zhangry.data.hibernate.HibernateDAO;
@@ -16,6 +17,7 @@ import com.zhangry.ssh.dao.DictionaryItemsDAO;
 import com.zhangry.ssh.entity.DictionaryItems;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -34,7 +36,7 @@ public class DictionaryItemsDAOImpl extends HibernateDAO<DictionaryItems, String
      */
     @Override
     public Page<DictionaryItems> getDicItemsPageByGroupKey(QueryParameter parameter, String groupKey) {
-        Map<String, Object> namedParameters = new HashMap<>(3);
+        Map<String, Object> namedParameters = new HashMap<String, Object>(3);
         StringBuffer hql = new StringBuffer("from DictionaryItems dictionaryItems where 1=1");
         hql.append(" and dictionaryItems.dictionary.groupKey =:groupKey");
         namedParameters.put("groupKey",groupKey);
@@ -57,7 +59,7 @@ public class DictionaryItemsDAOImpl extends HibernateDAO<DictionaryItems, String
     @Override
     public DictionaryItems getDictItemsByGroupKeyAndItemKey(String groupKey, String itemKey) {
 
-        Map<String, Object> namedParameters = new HashMap<>(3);
+        Map<String, Object> namedParameters = new HashMap<String, Object>(3);
         StringBuffer hql = new StringBuffer(" from DictionaryItems dictionaryItems where 1 = 1");
         hql.append(" and dictionaryItems.dictionary.groupKey = :groupKey");
         namedParameters.put("groupKey", groupKey);
@@ -79,7 +81,7 @@ public class DictionaryItemsDAOImpl extends HibernateDAO<DictionaryItems, String
     @Override
     public List<DictionaryItems> getDicItemsPageByGroupKey(String groupKey) {
 
-        Map<String, Object> namedParameters = new HashMap<>(3);
+        Map<String, Object> namedParameters = new HashMap<String, Object>(3);
         StringBuffer hql = new StringBuffer("from DictionaryItems dictionaryItems where 1 = 1");
         hql.append(" and dictionaryItems.dictionary.groupKey = :groupKey");
         namedParameters.put("groupKey",groupKey);

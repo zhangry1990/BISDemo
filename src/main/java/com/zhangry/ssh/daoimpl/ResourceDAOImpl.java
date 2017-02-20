@@ -1,5 +1,6 @@
 package com.zhangry.ssh.daoimpl;
 
+import com.zhangry.common.constant.Constant;
 import com.zhangry.common.util.StringUtil;
 import com.zhangry.data.hibernate.HibernateDAO;
 import com.zhangry.ssh.dao.ResourceDAO;

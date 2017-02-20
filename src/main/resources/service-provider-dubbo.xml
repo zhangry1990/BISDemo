@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 声明暴露的服务接口 —— 用户service -->
+    <dubbo:service interface="com.zhangry.ssh.service.UserService" protocol="dubbo" ref="userServiceImpl" timeout="100000" version="${dubbo.services.version}"/>
+    <!-- 声明暴露的服务接口 —— 组织service -->
+    <dubbo:service interface="com.zhangry.ssh.service.OrgService" protocol="dubbo" ref="orgServiceImpl" timeout="100000" version="${dubbo.services.version}"/>
+    <!-- 声明暴露的服务接口 —— 资源service -->
+    <dubbo:service interface="com.zhangry.ssh.service.ResourceService" protocol="dubbo" ref="resourceServiceImpl" timeout="100000" version="${dubbo.services.version}"/>
+    <!-- 声明暴露的服务接口 —— 角色service -->
+    <dubbo:service interface="com.zhangry.ssh.service.RoleService" protocol="dubbo" ref="roleServiceImpl" timeout="100000" version="${dubbo.services.version}"/>
+    <!-- 声明暴露的服务接口 —— 字典service -->
+    <dubbo:service interface="com.zhangry.ssh.service.DictionaryService" protocol="dubbo" ref="dictionaryServiceImpl" timeout="100000" version="${dubbo.services.version}"/>
+
+</beans>

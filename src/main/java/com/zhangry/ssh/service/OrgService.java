@@ -9,6 +9,7 @@
 package com.zhangry.ssh.service;
 
 
+import com.zhangry.service.BaseService;
 import com.zhangry.ssh.entity.Org;
 
 import java.util.List;

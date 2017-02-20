@@ -1,7 +1,7 @@
 package com.zhangry.ssh.controller;
 
 
-import com.thinvent.wxgl.uc.service.OrgService;
+import com.zhangry.ssh.service.OrgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +27,7 @@ public class UserController extends BaseController {
      */
     @RequestMapping
     public ModelAndView users() {
-        Map<String, Object> condition = new HashMap<>();
+        Map<String, Object> condition = new HashMap<String, Object>();
         ModelAndView modelAndView = new ModelAndView("users");
 
         return modelAndView;

@@ -10,6 +10,7 @@ package com.zhangry.ssh.service;
 
 
 import com.zhangry.common.page.QueryParameter;
+import com.zhangry.service.BaseService;
 import com.zhangry.ssh.entity.Role;
 
 import java.util.Map;

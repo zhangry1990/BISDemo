@@ -9,16 +9,15 @@
 package com.zhangry.ssh.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.thinvent.common.constant.Constant;
-import com.thinvent.common.util.StringUtil;
-import com.thinvent.data.hibernate.BaseEntity;
+import com.zhangry.common.constant.Constant;
+import com.zhangry.common.util.StringUtil;
+import com.zhangry.data.hibernate.BaseEntity;
 import org.hibernate.annotations.Where;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.*;
-
 /**
  * 用户实体
  * @author Liupj
@@ -108,16 +107,16 @@ public class User extends BaseEntity  implements UserDetails {
     @OrderBy("seq")
     @Where(clause = "ENABLED = 1 and DELETED_FLAG = 0")
     @JsonManagedReference
-    private Set<Role> roles = new HashSet<>(0);
+    private Set<Role> roles = new HashSet<Role>(0);
 
     //用户关联的组织用户实体列表
     @OneToMany(mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonManagedReference
-    private Set<OrgUser> orgUsers = new HashSet<>(0);
+    private Set<OrgUser> orgUsers = new HashSet<OrgUser>(0);
 
     //用户非兼职组织列表
     @Transient
-    private Set<Org> orgList = new HashSet<>(0);
+    private Set<Org> orgList = new HashSet<Org>(0);
 
     public Set<Org> getOrgList() {
         if(orgList.size() > 0) {

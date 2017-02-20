@@ -8,7 +8,7 @@
  */
 package com.zhangry.ssh.entity;
 
-import com.thinvent.data.hibernate.BaseEntity;
+import com.zhangry.data.hibernate.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

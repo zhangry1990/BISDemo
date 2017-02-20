@@ -8,20 +8,20 @@
  */
 package com.zhangry.ssh.serviceimpl;
 
-import com.thinvent.common.constant.Constant;
-import com.thinvent.common.page.Page;
-import com.thinvent.common.page.QueryParameter;
-import com.thinvent.common.util.AssertUtil;
-import com.thinvent.common.util.MapperUtil;
-import com.thinvent.common.util.StringUtil;
-import com.thinvent.service.impl.BaseServiceImpl;
-import com.thinvent.wxgl.uc.dao.ResourceDAO;
-import com.thinvent.wxgl.uc.dao.RoleDAO;
-import com.thinvent.wxgl.uc.dao.UserDAO;
-import com.thinvent.wxgl.uc.entity.Resource;
-import com.thinvent.wxgl.uc.entity.Role;
-import com.thinvent.wxgl.uc.entity.User;
-import com.thinvent.wxgl.uc.service.RoleService;
+import com.zhangry.common.constant.Constant;
+import com.zhangry.common.page.Page;
+import com.zhangry.common.page.QueryParameter;
+import com.zhangry.common.util.AssertUtil;
+import com.zhangry.common.util.MapperUtil;
+import com.zhangry.common.util.StringUtil;
+import com.zhangry.service.impl.BaseServiceImpl;
+import com.zhangry.ssh.dao.ResourceDAO;
+import com.zhangry.ssh.dao.RoleDAO;
+import com.zhangry.ssh.dao.UserDAO;
+import com.zhangry.ssh.entity.Resource;
+import com.zhangry.ssh.entity.Role;
+import com.zhangry.ssh.entity.User;
+import com.zhangry.ssh.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -154,7 +154,7 @@ public class RoleServiceImpl extends BaseServiceImpl<Role, String> implements Ro
         String strUserIdS = (String) condition.get("userIdS");
 
         //判断用户IdS集合是否为空
-        List<User> lstUser = new ArrayList<>();
+        List<User> lstUser = new ArrayList<User>();
         //strUserIdS不为空时，取出相应实体List
         if (!StringUtil.isNullOrEmpty(strUserIdS)) {
             //以逗号分割，转成数组
@@ -182,7 +182,7 @@ public class RoleServiceImpl extends BaseServiceImpl<Role, String> implements Ro
         //资源idS集合
         String strResourceIdS = (String) condition.get("resourceIdS");
 
-        List<Resource> lstResource= new ArrayList<>();
+        List<Resource> lstResource= new ArrayList<Resource>();
         //判断资源idS集合不为空时，取出相应实体List
         if (!StringUtil.isNullOrEmpty(strResourceIdS)) {
             //以逗号分割，转成数组

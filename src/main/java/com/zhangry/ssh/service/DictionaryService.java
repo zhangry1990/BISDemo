@@ -9,6 +9,7 @@
 package com.zhangry.ssh.service;
 
 import com.zhangry.common.page.QueryParameter;
+import com.zhangry.service.BaseService;
 import com.zhangry.ssh.entity.Dictionary;
 import com.zhangry.ssh.entity.DictionaryItems;
 

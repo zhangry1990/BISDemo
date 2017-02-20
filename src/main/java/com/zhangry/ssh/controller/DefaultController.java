@@ -1,7 +1,7 @@
 package com.zhangry.ssh.controller;
 
-import com.thinvent.web.servlet.handler.CustomSimpleMappingExceptionResolver;
-import com.thinvent.wxgl.security.support.UserContext;
+import com.zhangry.ssh.security.support.UserContext;
+import com.zhangry.web.servlet.handler.CustomSimpleMappingExceptionResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -13,8 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 
 /**
  * 默认页面控制器，如：登录页、首页、异常页面等

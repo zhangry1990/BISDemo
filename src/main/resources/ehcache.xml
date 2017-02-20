@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache name="ehCacheManager" updateCheck="false">
+   	<diskStore path="java.io.tmpdir"/>
+    <!--
+       name:缓存名称。
+       maxElementsInMemory：缓存最大个数。
+       eternal:对象是否永久有效，一但设置了，timeout将不起作用。
+       timeToIdleSeconds：设置对象在失效前的允许闲置时间（单位：秒）。
+                仅当eternal=false对象不是永久有效时使用，可选属性，默认值是0，也就是可闲置时间无穷大。
+       timeToLiveSeconds：设置对象在失效前允许存活时间（单位：秒）。最大时间介于创建时间和失效时间之间。
+                    仅当eternal=false对象不是永久有效时使用，默认是0.，也就是对象存活时间无穷大。
+       overflowToDisk：当内存中对象数量达到maxElementsInMemory时，Ehcache将会对象写到磁盘中。
+    -->
+   	<defaultCache
+        maxEntriesLocalHeap="1000000"
+		maxElementsInMemory="1000000"
+		eternal="false"
+		timeToIdleSeconds="604800"
+		timeToLiveSeconds="604800"
+		overflowToDisk="true">
+    </defaultCache>
+
+    <!-- 缺省Cache: 组织，用户，角色，资源相关的数据都保存在该cache中 -->
+    <cache maxEntriesLocalHeap="1000000" name="defaultCache"/>
+
+    <!-- cacheName: dicCache, 字典的相关的数据保存在该cache中 -->
+    <cache maxEntriesLocalHeap="1000000" name="dicCache"/>
+</ehcache>
+

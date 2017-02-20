@@ -9,7 +9,7 @@
 package com.zhangry.ssh.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.thinvent.data.hibernate.BaseEntity;
+import com.zhangry.data.hibernate.BaseEntity;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
@@ -50,7 +50,7 @@ public class Role extends BaseEntity {
             inverseJoinColumns = {@JoinColumn(name="USER_ID", nullable = false)})
     @Where(clause = "ENABLED = 1 and DELETED_FLAG = 0")
     @JsonManagedReference
-    private Set<User> users = new HashSet<>(0);
+    private Set<User> users = new HashSet<User>(0);
 
     //角色关联资源列表
     @ManyToMany(cascade = CascadeType.ALL)
@@ -59,7 +59,7 @@ public class Role extends BaseEntity {
             inverseJoinColumns = {@JoinColumn(name="RESOURCE_ID", nullable = false)})
     @Where(clause = "ENABLED = 1 and DELETED_FLAG = 0")
     @JsonManagedReference
-    private Set<Resource> resources = new HashSet<>(0);
+    private Set<Resource> resources = new HashSet<Resource>(0);
 
     public String getRoleName() {
         return roleName;

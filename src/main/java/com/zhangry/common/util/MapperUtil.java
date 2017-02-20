@@ -1,9 +1,15 @@
 package com.zhangry.common.util;
 
+import com.fasterxml.jackson.databind.JavaType;
 import com.google.common.collect.Lists;
 import com.zhangry.common.page.QueryParameter;
-
-import java.util.*;
+import com.zhangry.common.util.JsonMapper;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import org.dozer.DozerBeanMapper;
 
 /**
  * Created by zhangry on 2017/2/20.

@@ -9,11 +9,13 @@
 package com.zhangry.ssh.daoimpl;
 
 
+import com.zhangry.common.constant.Constant;
 import com.zhangry.data.hibernate.HibernateDAO;
 import com.zhangry.ssh.dao.DictionaryDAO;
 import com.zhangry.ssh.entity.Dictionary;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,7 +35,7 @@ public class DictionaryDAOImpl extends HibernateDAO<Dictionary, String> implemen
     @Override
     public Dictionary getDictionaryByGroupKey(String GroupKey) {
 
-        Map<String, Object> namedParameters = new HashMap<>(2);
+        Map<String, Object> namedParameters = new HashMap<String, Object>(2);
         StringBuffer hql = new StringBuffer(" from Dictionary dictionary where 1 = 1");
 
         hql.append(" and dictionary.groupKey = :groupKey");
@@ -51,7 +53,7 @@ public class DictionaryDAOImpl extends HibernateDAO<Dictionary, String> implemen
      */
     @Override
     public List<Dictionary> getDictionaryList() {
-        Map<String, Object> namedParameters = new HashMap<>(2);
+        Map<String, Object> namedParameters = new HashMap<String, Object>(2);
         StringBuffer hql = new StringBuffer(" from Dictionary dictionary where dictionary.deletedFlag = :deletedFlag");
         namedParameters.put("deletedFlag", Constant.DELETEDFLAG_NO);
 

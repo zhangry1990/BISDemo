@@ -8,17 +8,18 @@
  */
 package com.zhangry.ssh.serviceimpl;
 
-import com.thinvent.common.constant.Constant;
-import com.thinvent.common.util.AssertUtil;
-import com.thinvent.common.util.MapperUtil;
-import com.thinvent.common.util.StringUtil;
-import com.thinvent.service.impl.BaseServiceImpl;
-import com.thinvent.wxgl.uc.dao.ResourceDAO;
-import com.thinvent.wxgl.uc.dao.RoleDAO;
-import com.thinvent.wxgl.uc.entity.Resource;
-import com.thinvent.wxgl.uc.entity.Role;
-import com.thinvent.wxgl.uc.entity.User;
-import com.thinvent.wxgl.uc.service.ResourceService;
+import com.zhangry.common.constant.Constant;
+import com.zhangry.common.util.AssertUtil;
+import com.zhangry.common.util.MapperUtil;
+import com.zhangry.common.util.StringUtil;
+
+import com.zhangry.service.impl.BaseServiceImpl;
+import com.zhangry.ssh.dao.ResourceDAO;
+import com.zhangry.ssh.dao.RoleDAO;
+import com.zhangry.ssh.entity.Resource;
+import com.zhangry.ssh.entity.Role;
+import com.zhangry.ssh.entity.User;
+import com.zhangry.ssh.service.ResourceService;
 import org.apache.commons.collections4.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -99,7 +100,7 @@ public class ResourceServiceImpl extends BaseServiceImpl<Resource, String> imple
      */
     @Override
     public Map<String, String> getAllEnabledResources() {
-        Map<String, String> requestMap = new HashMap<>();
+        Map<String, String> requestMap = new HashMap<String, String>();
 
         List<Role> roles = roleDAO.getRoleList(new HashedMap<String, Object>());
         //获取角色所绑定资源

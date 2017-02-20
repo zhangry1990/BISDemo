@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+   <!-- <dubbo:application name="${dubbo.application.name}" />
+
+    &lt;!&ndash; 注册中心地址 &ndash;&gt;
+    <dubbo:registry protocol="zookeeper" address="${dubbo.zookeeper.address}" timeout="30000"/>
+
+    &lt;!&ndash; 声明使用的协议
+     name="rest"            ==> 表示采用的restful协议
+     server="servlet"       ==> 表示采用web容器发布rest服务
+     port="8090"            ==> 表示在8090端口上暴露服务
+     contextpath="services" ==> rest服务的基础路径，即web项目中的上下文路径
+     extension="com..."     ==> 自定义的filter, interceptor等
+
+     即最终的rest服务地址是： http://ip:8090/services/...
+     &ndash;&gt;
+    <dubbo:protocol name="rest" server="servlet" port="${dubbo.rest.port}" contextpath="${dubbo.rest.contextpath}" extension="com.zhangry.service.dubbo.CustomExceptionMapper"/>
+
+    &lt;!&ndash; 声明使用的协议
+    name="dubbo"            ==> 表示采用dubbo RPC（二进制+tcp协议）
+    port="-1"               ==> 表示暴露dubbo服务时使用的端口，为-1时表示随机分配一个未被占用的端口，从20880起
+    serialization="kryo"    ==> 表示采用Kryo序列化方式，此种序列化方式比dubbo序列化和dubbo默认的hessian2性能都要好
+    &ndash;&gt;
+    <dubbo:protocol name="dubbo" port="-1" serialization="kryo"/>
+-->
+</beans>

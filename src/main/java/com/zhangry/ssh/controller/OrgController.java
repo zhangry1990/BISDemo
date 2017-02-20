@@ -1,7 +1,7 @@
 package com.zhangry.ssh.controller;
 
 
-import com.thinvent.wxgl.uc.service.OrgService;
+import com.zhangry.ssh.service.OrgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +28,7 @@ public class OrgController extends BaseController {
      */
     @RequestMapping
     public ModelAndView orgs() {
-        Map<String, Object> condition = new HashMap<>();
+        Map<String, Object> condition = new HashMap<String, Object>();
         String orgTree = orgService.getOrgTree(condition);
 
         ModelAndView modelAndView = new ModelAndView("orgs");

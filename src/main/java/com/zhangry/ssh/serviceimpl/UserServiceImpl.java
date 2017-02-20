@@ -14,19 +14,19 @@ package com.zhangry.ssh.serviceimpl;
 import com.alibaba.fastjson.JSON;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Lists;
-import com.thinvent.common.constant.Constant;
-import com.thinvent.common.page.Page;
-import com.thinvent.common.page.QueryParameter;
-import com.thinvent.common.util.AssertUtil;
-import com.thinvent.common.util.CollectionUtil;
-import com.thinvent.common.util.MapperUtil;
-import com.thinvent.service.impl.BaseServiceImpl;
-import com.thinvent.wxgl.uc.dao.UserDAO;
-import com.thinvent.wxgl.uc.entity.OrgUser;
-import com.thinvent.wxgl.uc.entity.Resource;
-import com.thinvent.wxgl.uc.entity.Role;
-import com.thinvent.wxgl.uc.entity.User;
-import com.thinvent.wxgl.uc.service.UserService;
+import com.zhangry.common.constant.Constant;
+import com.zhangry.common.page.Page;
+import com.zhangry.common.page.QueryParameter;
+import com.zhangry.common.util.AssertUtil;
+import com.zhangry.common.util.CollectionUtil;
+import com.zhangry.common.util.MapperUtil;
+import com.zhangry.service.impl.BaseServiceImpl;
+import com.zhangry.ssh.dao.UserDAO;
+import com.zhangry.ssh.entity.OrgUser;
+import com.zhangry.ssh.entity.Resource;
+import com.zhangry.ssh.entity.Role;
+import com.zhangry.ssh.entity.User;
+import com.zhangry.ssh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -35,7 +35,6 @@ import org.springframework.stereotype.Service;
 
 import javax.ws.rs.Path;
 import java.util.*;
-
 /**
  * UserService 实现类
  *
@@ -194,7 +193,7 @@ public class UserServiceImpl extends BaseServiceImpl<User, String> implements Us
         user.getOrgName();
 
         //获取用户菜单树
-        Set<Resource> userResSet = new HashSet<>();
+        Set<Resource> userResSet = new HashSet<Resource>();
         Set<Role> roles = user.getRoles();
 
         Set<Resource> resources;
@@ -206,7 +205,7 @@ public class UserServiceImpl extends BaseServiceImpl<User, String> implements Us
             }
         }
 
-        List<Resource> userResList = new ArrayList<>(userResSet);
+        List<Resource> userResList = new ArrayList<Resource>(userResSet);
 
         Collections.sort(userResList, new Comparator<Resource>() {
             @Override
@@ -215,7 +214,7 @@ public class UserServiceImpl extends BaseServiceImpl<User, String> implements Us
             }
         });
 
-        List<Map<String, Object>> resMapList = new ArrayList<>(userResList.size());
+        List<Map<String, Object>> resMapList = new ArrayList<Map<String, Object>>(userResList.size());
 
         Map<String, Object> map;
         Map<String, Object> pMap;
