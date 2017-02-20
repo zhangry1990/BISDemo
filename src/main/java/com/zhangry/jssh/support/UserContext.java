@@ -1,5 +1,6 @@
 package com.zhangry.jssh.support;
 
+import com.zhangry.ssh.entity.User;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;

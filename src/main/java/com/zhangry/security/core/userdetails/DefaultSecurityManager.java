@@ -1,5 +1,8 @@
 package com.zhangry.security.core.userdetails;
 
+import com.zhangry.security.core.ISecureObject;
+import com.zhangry.security.core.ISecureObjectManager;
+import com.zhangry.security.core.IUserManager;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.core.authority.AuthorityUtils;

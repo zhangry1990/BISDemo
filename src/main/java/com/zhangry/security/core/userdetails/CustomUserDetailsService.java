@@ -1,5 +1,6 @@
 package com.zhangry.security.core.userdetails;
 
+import com.zhangry.security.core.IUserManager;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
