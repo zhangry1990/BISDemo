@@ -1,12 +1,13 @@
 package com.zhangry.common.util;
 
+import org.apache.commons.lang3.Validate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.*;
 
 /**
- * Created by zhangry on 2017/2/17.
+ * Created by zhangry on 2017/2/20.
  */
 public class ReflectUtil {
     private static Logger logger = LoggerFactory.getLogger(ReflectUtil.class);

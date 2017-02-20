@@ -9,7 +9,6 @@
 package com.zhangry.ssh.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.thinvent.data.hibernate.BaseEntity;
 
 import javax.persistence.*;
 

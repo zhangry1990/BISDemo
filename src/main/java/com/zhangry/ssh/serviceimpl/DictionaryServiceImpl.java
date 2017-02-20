@@ -9,7 +9,7 @@
 package com.zhangry.ssh.serviceimpl;
 
 
-import com.zhangry.ssh.common.page.QueryParameter;
+import com.zhangry.common.page.QueryParameter;
 import com.zhangry.ssh.dao.DictionaryDAO;
 import com.zhangry.ssh.dao.DictionaryItemsDAO;
 import com.zhangry.ssh.entity.Dictionary;

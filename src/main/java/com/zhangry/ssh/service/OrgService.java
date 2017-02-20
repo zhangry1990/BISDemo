@@ -8,8 +8,9 @@
  */
 package com.zhangry.ssh.service;
 
-import com.thinvent.service.BaseService;
-import com.thinvent.wxgl.uc.entity.Org;
+
+import com.zhangry.ssh.entity.Org;
+
 import java.util.List;
 import java.util.Map;
 

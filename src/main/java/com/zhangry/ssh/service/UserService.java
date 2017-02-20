@@ -10,9 +10,9 @@
 */
 package com.zhangry.ssh.service;
 
-import com.thinvent.common.page.QueryParameter;
-import com.thinvent.service.BaseService;
-import com.thinvent.wxgl.uc.entity.User;
+
+import com.zhangry.common.page.QueryParameter;
+import com.zhangry.ssh.entity.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Map;

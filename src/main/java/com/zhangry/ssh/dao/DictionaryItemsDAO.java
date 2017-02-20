@@ -1,14 +1,12 @@
 package com.zhangry.ssh.dao;
 
 
-
-import com.thinvent.common.page.Page;
-import com.thinvent.common.page.QueryParameter;
-import com.thinvent.data.hibernate.BaseDAO;
-import com.thinvent.wxgl.uc.entity.DictionaryItems;
+import com.zhangry.common.page.Page;
+import com.zhangry.common.page.QueryParameter;
+import com.zhangry.data.hibernate.BaseDAO;
+import com.zhangry.ssh.entity.DictionaryItems;
 
 import java.util.List;
-
 
 /**
  * @author huangwei

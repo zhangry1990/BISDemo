@@ -1,12 +1,12 @@
 package com.zhangry.common.util;
 
-import org.springframework.util.Assert;
-
+import com.zhangry.common.util.StringUtil;
 import java.util.Collection;
 import java.util.Map;
+import org.springframework.util.Assert;
 
 /**
- * Created by zhangry on 2017/2/17.
+ * Created by zhangry on 2017/2/20.
  */
 public class AssertUtil {
     private AssertUtil() {

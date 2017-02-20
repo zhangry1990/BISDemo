@@ -10,7 +10,6 @@ package com.zhangry.ssh.daoimpl;
 
 
 import com.zhangry.data.hibernate.HibernateDAO;
-import com.zhangry.ssh.common.constant.Constant;
 import com.zhangry.ssh.dao.DictionaryDAO;
 import com.zhangry.ssh.entity.Dictionary;
 import org.springframework.stereotype.Repository;

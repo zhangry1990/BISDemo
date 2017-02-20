@@ -1,12 +1,12 @@
-package com.zhangry.ssh.common.page;
+package com.zhangry.common.page;
 
 import com.google.common.collect.Lists;
-import com.zhangry.ssh.common.enums.AscDesc;
+import com.zhangry.common.enums.AscDesc;
 
 import java.util.List;
 
 /**
- * Created by zhangry on 2017/2/17.
+ * Created by zhangry on 2017/2/20.
  */
 public class QueryParameter {
     public static final String ASC = "asc";
@@ -14,7 +14,7 @@ public class QueryParameter {
     protected int pageNo = 1;
     protected int pageSize = 10;
     protected boolean autoCount = true;
-    private List<QueryParameter.Sort> sortList = Lists.newArrayList();
+    private List<Sort> sortList = Lists.newArrayList();
 
     public QueryParameter() {
     }
@@ -53,7 +53,7 @@ public class QueryParameter {
     }
 
     public int getFirst() {
-        return this.pageNo >= 1 && this.pageSize >= 1 ? (this.pageNo - 1) * this.pageSize : 0;
+        return this.pageNo >= 1 && this.pageSize >= 1?(this.pageNo - 1) * this.pageSize:0;
     }
 
     public boolean isFirstSetted() {
@@ -94,17 +94,17 @@ public class QueryParameter {
         }
 
         public boolean equals(Object o) {
-            if (this == o) {
+            if(this == o) {
                 return true;
-            } else if (!(o instanceof QueryParameter.Sort)) {
+            } else if(!(o instanceof QueryParameter.Sort)) {
                 return false;
             } else {
-                QueryParameter.Sort sort = (QueryParameter.Sort) o;
-                if (this.fieldName != null) {
-                    if (this.fieldName.equals(sort.fieldName)) {
+                QueryParameter.Sort sort = (QueryParameter.Sort)o;
+                if(this.fieldName != null) {
+                    if(this.fieldName.equals(sort.fieldName)) {
                         return this.ascOrDesc == sort.ascOrDesc;
                     }
-                } else if (sort.fieldName == null) {
+                } else if(sort.fieldName == null) {
                     return this.ascOrDesc == sort.ascOrDesc;
                 }
 
@@ -113,8 +113,8 @@ public class QueryParameter {
         }
 
         public int hashCode() {
-            int result = this.fieldName != null ? this.fieldName.hashCode() : 0;
-            result = 31 * result + (this.ascOrDesc != null ? this.ascOrDesc.hashCode() : 0);
+            int result = this.fieldName != null?this.fieldName.hashCode():0;
+            result = 31 * result + (this.ascOrDesc != null?this.ascOrDesc.hashCode():0);
             return result;
         }
     }

@@ -9,20 +9,13 @@
 package com.zhangry.ssh.daoimpl;
 
 
-import com.thinvent.common.constant.Constant;
-import com.thinvent.common.page.Page;
-import com.thinvent.common.page.QueryParameter;
-import com.thinvent.common.util.AssertUtil;
-import com.thinvent.common.util.StringUtil;
-import com.thinvent.data.hibernate.HibernateDAO;
-
-import com.thinvent.wxgl.uc.dao.DictionaryDAO;
-import com.thinvent.wxgl.uc.dao.DictionaryItemsDAO;
-import com.thinvent.wxgl.uc.entity.DictionaryItems;
-import org.apache.commons.lang3.StringUtils;
+import com.zhangry.common.page.Page;
+import com.zhangry.common.page.QueryParameter;
+import com.zhangry.data.hibernate.HibernateDAO;
+import com.zhangry.ssh.dao.DictionaryItemsDAO;
+import com.zhangry.ssh.entity.DictionaryItems;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

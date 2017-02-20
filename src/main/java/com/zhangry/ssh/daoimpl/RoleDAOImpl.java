@@ -8,18 +8,15 @@
  */
 package com.zhangry.ssh.daoimpl;
 
-import com.thinvent.common.constant.Constant;
-import com.thinvent.common.page.Page;
-import com.thinvent.common.page.QueryParameter;
-import com.thinvent.common.util.EncodeUtil;
-import com.thinvent.common.util.StringUtil;
-import com.thinvent.data.hibernate.HibernateDAO;
-import com.thinvent.wxgl.uc.entity.Role;
-import com.thinvent.wxgl.uc.dao.RoleDAO;
-import org.apache.commons.collections.map.HashedMap;
+
+import com.zhangry.common.page.Page;
+import com.zhangry.common.page.QueryParameter;
+import com.zhangry.common.util.StringUtil;
+import com.zhangry.data.hibernate.HibernateDAO;
+import com.zhangry.ssh.dao.RoleDAO;
+import com.zhangry.ssh.entity.Role;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,7 +52,7 @@ public class RoleDAOImpl extends HibernateDAO<Role, String> implements RoleDAO {
 
         StringBuffer hql = new StringBuffer(HQL);
         // 查询列表集合
-        Map<String, Object> paramS = new HashMap<>();
+        Map<String, Object> paramS = new HashMap<String, Object>();
 
         //判断角色名称是否为空
         if (!StringUtil.isNullOrEmpty(strRoleName)) {
@@ -87,7 +84,7 @@ public class RoleDAOImpl extends HibernateDAO<Role, String> implements RoleDAO {
      */
     @Override
     public boolean isExistRoleName(String roleName) {
-        Map<String, Object> paramS = new HashMap<>(1);
+        Map<String, Object> paramS = new HashMap<String, Object>(1);
         StringBuffer hql = new StringBuffer(HQL);
         hql.append(" AND role.roleName =:roleName");
         paramS.put("roleName", roleName);
@@ -108,7 +105,7 @@ public class RoleDAOImpl extends HibernateDAO<Role, String> implements RoleDAO {
         //角色名称
         String strRoleName = (String) condition.get("roleName");
 
-        Map<String, Object> paramS = new HashMap<>(1);
+        Map<String, Object> paramS = new HashMap<String, Object>(1);
         StringBuffer hql = new StringBuffer(HQL);
         //判断角色名称是否为空
         if (!StringUtil.isNullOrEmpty(strRoleName)) {

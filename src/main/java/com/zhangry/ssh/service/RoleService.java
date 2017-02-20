@@ -8,9 +8,9 @@
  */
 package com.zhangry.ssh.service;
 
-import com.thinvent.common.page.QueryParameter;
-import com.thinvent.service.BaseService;
-import com.thinvent.wxgl.uc.entity.Role;
+
+import com.zhangry.common.page.QueryParameter;
+import com.zhangry.ssh.entity.Role;
 
 import java.util.Map;
 

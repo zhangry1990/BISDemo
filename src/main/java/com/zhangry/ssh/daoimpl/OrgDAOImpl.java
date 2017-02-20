@@ -8,12 +8,13 @@
  */
 package com.zhangry.ssh.daoimpl;
 
-import com.thinvent.common.constant.Constant;
-import com.thinvent.common.util.StringUtil;
-import com.thinvent.data.hibernate.HibernateDAO;
-import com.thinvent.wxgl.uc.dao.OrgDAO;
-import com.thinvent.wxgl.uc.entity.Org;
+
+import com.zhangry.common.util.StringUtil;
+import com.zhangry.data.hibernate.HibernateDAO;
+import com.zhangry.ssh.dao.OrgDAO;
+import com.zhangry.ssh.entity.Org;
 import org.springframework.stereotype.Repository;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +34,7 @@ public class OrgDAOImpl extends HibernateDAO<Org, String> implements OrgDAO {
      */
     @Override
     public List<Org> getOrgListByPId(String pId) {
-        Map<String, Object> namedParameters = new HashMap<>(2);
+        Map<String, Object> namedParameters = new HashMap<String, Object>(2);
         StringBuffer hql = new StringBuffer(" FROM Org org WHERE org.deletedFlag =:deletedFlag");
         namedParameters.put("deletedFlag", Constant.DELETEDFLAG_NO);
         //判断父ID是否空
@@ -55,7 +56,7 @@ public class OrgDAOImpl extends HibernateDAO<Org, String> implements OrgDAO {
         //父ID
         String pId = (String) condition.get("pId");
 
-        Map<String, Object> namedParameters = new HashMap<>(2);
+        Map<String, Object> namedParameters = new HashMap<String, Object>(2);
 
         StringBuffer sql = new StringBuffer("SELECT * FROM T_BASE_ORG org WHERE org.DELETED_FLAG =:deletedFlag");
         namedParameters.put("deletedFlag", Constant.DELETEDFLAG_NO);
@@ -79,7 +80,7 @@ public class OrgDAOImpl extends HibernateDAO<Org, String> implements OrgDAO {
     @Override
     public List<Map<String, Object>> getOrgTree(String pId) {
 
-        Map<String, Object> namedParameters = new HashMap<>(2);
+        Map<String, Object> namedParameters = new HashMap<String, Object>(2);
         StringBuffer sql = new StringBuffer("SELECT * FROM T_BASE_ORG org WHERE org.DELETED_FLAG =:deletedFlag");
         namedParameters.put("deletedFlag", Constant.DELETEDFLAG_NO);
         if (!StringUtil.isNullOrEmpty(pId)) {

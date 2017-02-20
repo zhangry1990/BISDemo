@@ -8,7 +8,7 @@
  */
 package com.zhangry.ssh.service;
 
-import com.zhangry.ssh.common.page.QueryParameter;
+import com.zhangry.common.page.QueryParameter;
 import com.zhangry.ssh.entity.Dictionary;
 import com.zhangry.ssh.entity.DictionaryItems;
 

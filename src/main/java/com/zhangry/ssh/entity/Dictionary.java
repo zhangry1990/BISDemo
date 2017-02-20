@@ -9,7 +9,6 @@
 package com.zhangry.ssh.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.thinvent.data.hibernate.BaseEntity;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
@@ -41,7 +40,7 @@ public class Dictionary extends BaseEntity {
     @OrderBy("seq")
     @Where(clause = "ENABLED = 1 AND DELETED_FLAG = 0")
     @JsonManagedReference
-    private Set<DictionaryItems> dictionaryItemses = new HashSet<>();
+    private Set<DictionaryItems> dictionaryItemses = new HashSet<DictionaryItems>();
 
     /* default constructor */
     public Dictionary() {

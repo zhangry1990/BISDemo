@@ -1,7 +1,8 @@
 package com.zhangry.ssh.dao;
 
-import com.thinvent.data.hibernate.BaseDAO;
-import com.thinvent.wxgl.uc.entity.Org;
+import com.zhangry.data.hibernate.BaseDAO;
+import com.zhangry.ssh.entity.Org;
+
 import java.util.List;
 import java.util.Map;
 

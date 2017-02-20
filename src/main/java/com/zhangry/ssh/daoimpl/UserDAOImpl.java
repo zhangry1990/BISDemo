@@ -11,13 +11,13 @@
  */
 package com.zhangry.ssh.daoimpl;
 
-import com.thinvent.common.constant.Constant;
-import com.thinvent.common.page.Page;
-import com.thinvent.common.page.QueryParameter;
-import com.thinvent.common.util.StringUtil;
-import com.thinvent.data.hibernate.HibernateDAO;
-import com.thinvent.wxgl.uc.dao.UserDAO;
-import com.thinvent.wxgl.uc.entity.User;
+
+import com.zhangry.common.page.Page;
+import com.zhangry.common.page.QueryParameter;
+import com.zhangry.common.util.StringUtil;
+import com.zhangry.data.hibernate.HibernateDAO;
+import com.zhangry.ssh.dao.UserDAO;
+import com.zhangry.ssh.entity.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
@@ -42,7 +42,7 @@ public class UserDAOImpl extends HibernateDAO<User, String> implements UserDAO {
      */
     @Override
     public User getUserByUsername(String username) {
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("username", username);
         params.put("deletedFlag", 0);
 
@@ -66,7 +66,7 @@ public class UserDAOImpl extends HibernateDAO<User, String> implements UserDAO {
 
         //防止condition为空
         if (condition == null) {
-            condition = new HashMap<>();
+            condition = new HashMap<String, Object>();
         }
 
         String username = (String) condition.get("username");

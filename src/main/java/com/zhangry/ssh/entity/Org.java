@@ -8,8 +8,6 @@
  */
 package com.zhangry.ssh.entity;
 
-import com.thinvent.data.hibernate.BaseEntity;
-
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
@@ -69,7 +67,7 @@ public class Org extends BaseEntity {
 
     //组织关联的组织用户列表
     @OneToMany(mappedBy = "org")
-    private Set<OrgUser> orgUsers = new HashSet<>(0);
+    private Set<OrgUser> orgUsers = new HashSet<OrgUser>(0);
 
     /* default constructor */
     public Org() {}

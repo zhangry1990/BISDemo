@@ -1,10 +1,9 @@
 package com.zhangry.ssh.daoimpl;
 
-import com.thinvent.common.constant.Constant;
-import com.thinvent.common.util.StringUtil;
-import com.thinvent.data.hibernate.HibernateDAO;
-import com.thinvent.wxgl.uc.dao.ResourceDAO;
-import com.thinvent.wxgl.uc.entity.Resource;
+import com.zhangry.common.util.StringUtil;
+import com.zhangry.data.hibernate.HibernateDAO;
+import com.zhangry.ssh.dao.ResourceDAO;
+import com.zhangry.ssh.entity.Resource;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -26,7 +25,7 @@ public class ResourceDAOImpl extends HibernateDAO<Resource, String> implements R
     @Override
     public List<Resource> getResourceTree(Map<String, Object> condition) {
         //定义Map,存放参数
-        Map<String, Object> namedParameters = new HashMap<>(1);
+        Map<String, Object> namedParameters = new HashMap<String, Object>(1);
         //查询SQl
         StringBuffer hql = new StringBuffer(HQL);
 
@@ -42,7 +41,7 @@ public class ResourceDAOImpl extends HibernateDAO<Resource, String> implements R
      */
     @Override
     public Integer getRoleResourceCountByReourceId(String resourceId) {
-        Map<String, Object> paramMap = new HashMap<>(1);
+        Map<String, Object> paramMap = new HashMap<String, Object>(1);
         String SQL = "SELECT COUNT(*) AS ROLERESCOUNT FROM T_BASE_ROLE_RESOURCE WHERE RESOURCE_ID =:RESOURCEID";
         paramMap.put("RESOURCEID", resourceId);
         List<Map<String, Object>> lstMap = this.findBySql(SQL, paramMap);

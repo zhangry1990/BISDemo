@@ -1,11 +1,14 @@
 package com.zhangry.data.hibernate;
 
-import org.hibernate.Criteria;
-import org.hibernate.HibernateException;
-import org.hibernate.Query;
-import org.hibernate.SQLQuery;
-import org.hibernate.criterion.Order;
-
+import com.zhangry.common.exception.DAOException;
+import com.zhangry.common.page.Page;
+import com.zhangry.common.page.QueryParameter;
+import com.zhangry.common.page.QueryParameter.Sort;
+import com.zhangry.common.util.AssertUtil;
+import com.zhangry.common.util.StringUtil;
+import com.zhangry.data.hibernate.BaseDAO;
+import com.zhangry.data.hibernate.ResultToMap;
+import com.zhangry.data.hibernate.SimpleHibernateDAO;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -15,9 +18,15 @@ import java.sql.Statement;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.SQLQuery;
+import org.hibernate.criterion.Order;
+import org.springframework.orm.hibernate5.SessionFactoryUtils;
 
 /**
- * Created by zhangry on 2017/2/17.
+ * Created by zhangry on 2017/2/20.
  */
 public class HibernateDAO<T, Id extends Serializable> extends SimpleHibernateDAO<T, Id> implements BaseDAO<T, Id> {
     public HibernateDAO() {

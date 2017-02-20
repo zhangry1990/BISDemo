@@ -1,7 +1,7 @@
-package com.zhangry.ssh.common.constant;
+package com.zhangry.common.constant;
 
 /**
- * Created by zhangry on 2017/2/17.
+ * Created by zhangry on 2017/2/20.
  */
 public class Constant {
     public static final String NO = "0";
